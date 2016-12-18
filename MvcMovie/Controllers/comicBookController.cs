@@ -17,12 +17,7 @@ namespace MvcMovie.Controllers
         public ActionResult Detail()
         {
 
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
-            {
-                return Redirect("/");
-            }
-
-            return Content("Today is " + DateTime.Today.DayOfWeek.ToString());
+            return View();
         }
 
     }
