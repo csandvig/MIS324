@@ -17,6 +17,18 @@ namespace MvcMovie.Controllers
         public ActionResult Detail()
         {
 
+            ViewBag.SeriesTitle = "The Amazing Spider Man";
+            ViewBag.IssueNumber = 700;
+            ViewBag.Description = "<p>Final Issue! Witness the <b>final</b>...</p>";
+            ViewBag.Artists = new string[]
+            {
+            "script: dan s",
+            "pencils: Bill h",
+            "colors: Edgar D",
+            "letters: chris E"
+
+            };
+
             return View();
         }
 
