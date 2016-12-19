@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using MvcMovie.Models;
 
 namespace MvcMovie.Controllers
 {
@@ -16,20 +17,25 @@ namespace MvcMovie.Controllers
 
         public ActionResult Detail()
         {
-
-            ViewBag.SeriesTitle = "The Amazing Spider Man";
-            ViewBag.IssueNumber = 700;
-            ViewBag.Description = "<p>Final Issue! Witness the <b>final</b>...</p>";
-            ViewBag.Artists = new string[]
+            var comicBook = new ComicBook()
             {
-            "script: dan s",
-            "pencils: Bill h",
-            "colors: Edgar D",
-            "letters: chris E"
-
+                SeriesTitle = "The Amazing Spider Man",
+                IssueNumber = 700,
+                DescriptionHtml = "<p>Final Issue! Witness the <b>final</b>...</p>",
+                Artists = new Artist[]
+                {
+                    new Artist() {Name = "Dan", Role = "Script" },
+                    new Artist() {Name = "Sam", Role = "Pencils" },
+                    new Artist() {Name = "Victor", Role = "Inks" },
+                    new Artist() {Name = "Apollo", Role = "Colors" },
+                    new Artist() {Name = "Kai", Role = "Letters" }
+                }
             };
 
-            return View();
+            //ViewBag.ComicBook = comicBook;
+
+            //pass model, strongly typed
+            return View(comicBook);
         }
 
     }

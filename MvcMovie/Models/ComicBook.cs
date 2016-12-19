@@ -20,7 +20,7 @@ namespace MvcMovie.Models
             {
                 return SeriesTitle + " #" + IssueNumber;
             }
-        }
+        } 
 
         public string CoverImageFileName
         {
