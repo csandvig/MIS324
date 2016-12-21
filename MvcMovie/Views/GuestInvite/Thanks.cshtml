@@ -1,0 +1,29 @@
+﻿@model MvcMovie.Models.GuestResponse
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Thanks</title>
+</head>
+<body>
+    <div class="text-center"> 
+        <h1>Thank you @Model.Name</h1>
+        @if (Model.WillAttend == true)
+        {
+            @:Great!
+        }
+        else
+        {
+            @:Sorry you can't make it :-(
+            
+        }
+        <p>@Html.ActionLink("Return to form", "RsvpForm")</p>
+    </div>
+</body>
+</html>

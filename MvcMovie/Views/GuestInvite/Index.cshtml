@@ -1,0 +1,23 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <div class="text-center"> 
+        <h2>@ViewBag.Greeting world (from view)</h2>
+        <h3>We are going to have an exciting party!</h3>
+        <div class="btn btn-success">
+            @Html.ActionLink("Please RSVP", "RsvpForm")
+        </div>
+    </div>
+</body>
+</html>

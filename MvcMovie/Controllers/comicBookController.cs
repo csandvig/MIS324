@@ -4,38 +4,34 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using MvcMovie.Models;
+using MvcMovie.Data;
 
 namespace MvcMovie.Controllers
 {
     public class ComicBookController : Controller
     {
+        private ComicBookRepository _comicBookRepository = null;
+
+        public ComicBookController()
+        {
+            _comicBookRepository = new ComicBookRepository();
+
+        }
+
         // GET: ComicBook
         public ActionResult Index()
         {
             return View();
         }
 
-        public ActionResult Detail()
+        public ActionResult Detail(int id)
         {
-            var comicBook = new ComicBook()
-            {
-                SeriesTitle = "The Amazing Spider Man",
-                IssueNumber = 700,
-                DescriptionHtml = "<p>Final Issue! Witness the <b>final</b>...</p>",
-                Artists = new Artist[]
-                {
-                    new Artist() {Name = "Dan", Role = "Script" },
-                    new Artist() {Name = "Sam", Role = "Pencils" },
-                    new Artist() {Name = "Victor", Role = "Inks" },
-                    new Artist() {Name = "Apollo", Role = "Colors" },
-                    new Artist() {Name = "Kai", Role = "Letters" }
-                }
-            };
+
 
             //ViewBag.ComicBook = comicBook;
 
             //pass model, strongly typed
-            return View(comicBook);
+            return View(ComicBookRepository.GetComicBook(id));
         }
 
     }

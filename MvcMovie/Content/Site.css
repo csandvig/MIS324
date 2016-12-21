@@ -42,3 +42,10 @@ textarea {
 .series-list li:last-child{
   border: none;
 }
+
+.input-validation-error {
+color:#f00;
+}
+.validation-summary-errors {
+    font-weight:bold; color: #f00;
+}
